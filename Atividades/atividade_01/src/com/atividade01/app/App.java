@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
         // TODO: atividade 01
         // Crie um programa que receba do usuário: nome, peso e altura,
         // e exiba na tela o valor de seu IMC (índice de massa corporal) 
@@ -16,61 +17,50 @@ public class App {
         // imc entre 35 e 40 = obesidade nível 2
         // imc maior que 40 = obesidade mórbida
 
-        // estaciar a scanner
-
+        // instaciar a classe scanner
         Scanner sc = new Scanner (System.in);
 
+        // declaração de variáveis
         String nome;
-        double peso, altura, imc, resultado;
+        double peso;
+        double altura;
+        double imc;
 
-        System.out.println("Informe seu nome: ");
+        // entrada de dados
+        System.out.println("Informe seu nome:");
         nome = sc.nextLine();
-        System.out.println("Informe seu peso: ");
+        System.out.println("Informe seu peso em kg:");
         peso = sc.nextDouble();
-        System.out.println("Informe  sua altura: ");
+        System.out.println("Informe sua altura em metros:");
         altura = sc.nextDouble();
 
         // calcular imc
         imc = peso/(altura*altura);
 
-        if (imc >=18.5 && imc <=25) {
-            resultado = "Peso ideal";
+        // mostra o imc para o usuario
+        System.out.println(nome + " seu IMC é " + String.format("%.2f" , imc) + ".");
+        
+        // diagnostico
+        if (imc < 18.5) {
+        System.out.println(nome + " está abaixo do peso.");
         }
-        else if (imc >=25 && imc <=30) {
-            resultado = "Acima do peso";
+        else if (imc < 25) {
+           System.out.println(nome + "está no epso ideal.");
         }
-        else if (imc >=30 && imc <=35) {
-            resultafo = "Obeso";
+        else if (imc <30) {
+            System.out.println(nome + "está acima do peso");
         }
-        else if (imc >=35 && imc <=40) {
-            resultado = "Obesidade nível 2"; 
+        else if (imc <35) {
+            System.out.println(nome + "obeso");
         }
-        else if (imc >40) {
-            resultado = "Obesidade mórbida";
+        else if (imc <40) {
+            System.out.println(nome + "obesidade nível 2");
         }
-
-        System.out.println("nome" + imc);
-
-
-        
-
-        
-        
-        
-        
-        
-        
+        else {
+            System.out.println(nome + " está com obesidade mórbida.");
+        }
         
         sc.close();
-
-
-
-
-
-
-
-
-
     }
 }
  
