@@ -16,11 +16,11 @@ public class App {
         // NOTE: veículo não mostra dados, portanto não pode ser via método
         // NOTE: usuário  deverá  informar os dados do veiculo
         
-        // instanciar a classe veículo
+        // instanciar a classe veículo e scanner
         Veiculo carro = new Veiculo();
         Scanner sc = new Scanner(System.in);
 
-        // saída de dados
+        // entrada de dados
         System.out.println("Informe o fabricante:");
         carro.fabricante = sc.nextLine();
         System.out.println("Informe a placa:");
@@ -28,7 +28,16 @@ public class App {
         System.out.println("Informe o ano do veiculo:");
         carro.ano = sc.nextInt();
         System.out.println("Informe a cor:");
+        sc.nextLine();
         carro.cor = sc.nextLine();
+        System.out.println("Informe o modelo:");
+        carro.modelo = sc.nextLine();
+
+
+        System.out.println("Fabricante: " + carro.fabricante);
+        System.out.println("Modelo: " + carro.modelo);
+        System.out.println("Placa: " + carro.placa);
+        System.out.println("Ano: " + carro.ano);
 
 
         sc.close();
