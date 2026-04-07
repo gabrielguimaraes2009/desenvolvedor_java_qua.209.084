@@ -1,14 +1,25 @@
 package com.atividade06.models;
 
-public class Moto extends Veiculo {
-    private int cilindradas;
+final public class Moto extends Veiculo {
+    // atributo
+    private String cilindradas;
 
-    public int getCilindradas() {
-        return cilindradas;
-    }
-
-    public void setCilindradas(int cilindradas) {
+    // construtor
+    public Moto(String cilindradas, String fabricante, String modelo, String ano, String cor, String categoria, String placa) {
+        super(fabricante, modelo, ano, cor, placa, categoria);
         this.cilindradas = cilindradas;
     }
+    // getters e setters
+    public String getCilindradas() {
+        return this.cilindradas;
+    }
+
+    public void setCilindradas(String cilindradas) {
+        this.cilindradas = cilindradas;
+    }
+
+
+    
+
 
 }
