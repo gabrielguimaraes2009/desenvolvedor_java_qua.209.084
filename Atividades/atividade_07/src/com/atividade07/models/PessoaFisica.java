@@ -4,6 +4,8 @@ public class PessoaFisica extends Pessoa{
     // atributos
     private String nome;
     private String cpf;
+    public String setNome;
+    public String setCpf;
 
 
     public PessoaFisica(String nome, String cpf, String email) {

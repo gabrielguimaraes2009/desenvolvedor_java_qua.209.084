@@ -5,14 +5,14 @@ public class PessoaJuridica extends Pessoa{
     // atributos
     private String nomeFantasia;
     private String cnpj;
-    private String razaosocial;
+    private String Razaosocial;
 
 
     public PessoaJuridica(String nomeFantasia, String cnpj, String razaosocial, String email) {
         super (email);
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
-        this.razaosocial = razaosocial;
+        this.Razaosocial = razaosocial;
     }
 
     public String getNomeFantasia() {
@@ -32,11 +32,11 @@ public class PessoaJuridica extends Pessoa{
     }
 
     public String getRazaosocial() {
-        return this.razaosocial;
+        return this.Razaosocial;
     }
 
     public void setRazaosocial(String razaosocial) {
-        this.razaosocial = razaosocial;
+        this.Razaosocial = razaosocial;
     }
 
 
