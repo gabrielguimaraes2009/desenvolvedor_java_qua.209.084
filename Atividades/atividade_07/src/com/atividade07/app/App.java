@@ -129,8 +129,7 @@ public class App {
                             System.out.println("Opção inválida.");
                     }
                 } while (!"4".equals(opcao));
-            }
-            else {
+            } else {
                 System.out.println("Não foi possível cadastrar novo titular.");
                 System.out.println("Programa encerrado.");
             }
@@ -138,4 +137,3 @@ public class App {
 
         sc.close();
     }
-}
