@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- link para voltar -->
+     <a href="index.html">Voltar</a>
+
+     <h1>Formulário</h1>
+     <!-- formulário -->
+      <form action="" method="">
+        <label for="name">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="idade">Idade:</label><br>
+        <input type="number" id="idade" name="idade" min="0"><br>
+        <label for="altura">Altura:</label><br>
+        <input type="number" id="altura" name="altura" step="0.01"><br>
+        <label for="data de nascimento">Data de nascimento</label><br>
+        <input type="date" id="dataNascimento" name="dataNascimento"><br><br>
+        <label for="genero">Gênero:</label><br>
+        <input type="radio" id="genero" name="genero" value="Masculino"><span>Masculino</span><br>
+        <input type="radio" id="genero" name="genero" value="Feminino"><span>Feminino</span><br>
+        <label for="escolaridade">Escolaridade:</label><br>
+        <select name="escolaridade" id="escolaridade">
+          <option value="fundamental">Fundamental</option>
+          <option value="medio">Medio</option>
+          <option value="graduacao">Graduação</option>
+          <option value="pos-graduacao">Pós Graduação</option>
+        </select><br>
+        <label for="senha">Senha:</label><br>
+        <input type="password"><br>
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Resetar</button>
+      </form>
+</body>
+</html>
