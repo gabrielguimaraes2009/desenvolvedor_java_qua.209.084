@@ -10,3 +10,6 @@ a .logo {
     width: 56px; 
     margin: -5px 0px;
 }
+.border {
+    border: 2px solid black;
+}
