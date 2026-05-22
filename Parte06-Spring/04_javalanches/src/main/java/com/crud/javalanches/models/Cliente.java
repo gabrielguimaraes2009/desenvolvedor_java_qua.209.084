@@ -20,9 +20,9 @@ public class Cliente {
     private String email;
     @Column(nullable = false)
     private String nome;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 16)
     private String telefone;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 14)
     private String cpf;
     @Column(nullable = false)
     private LocalDate dataNascimento;

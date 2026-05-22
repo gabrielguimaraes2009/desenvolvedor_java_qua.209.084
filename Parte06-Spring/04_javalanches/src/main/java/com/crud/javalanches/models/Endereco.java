@@ -15,7 +15,7 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigoEndereco;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 10)
     private String cep;
     @Column(nullable = false)
     private String uf;
