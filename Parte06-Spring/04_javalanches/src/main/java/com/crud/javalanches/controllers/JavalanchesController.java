@@ -2,6 +2,7 @@ package com.crud.javalanches.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,4 +28,11 @@ public class JavalanchesController {
         categoriaRepository.save(categoria);
         return "Categoria_sucesso";
     }
+
+    @GetMapping("/novoProduto")
+    public String novoProduto(Model model) {
+        model.addAttribute("categorias", categoriaRepository.findAll());
+        return "novo_produto";
+    }
+
 }
