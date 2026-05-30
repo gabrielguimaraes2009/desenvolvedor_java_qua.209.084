@@ -49,4 +49,10 @@ public class JavalanchesController {
         return "Produto_sucesso";
     }
 
+    @GetMapping("/listarProdutos")
+    public String listarProdutos(Model model) {
+        model.addAttribute("categorias", categoriaRepository.findAll());
+        return "listar_produtos";
+    }
+
 }
