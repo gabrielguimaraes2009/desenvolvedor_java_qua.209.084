@@ -55,4 +55,10 @@ public class JavalanchesController {
         return "listar_produtos";
     }
 
+    @GetMapping("/novoCliente")
+    public String novoCliente(Model model) {
+        return "novo_cliente";
+    }
+
+
 }
