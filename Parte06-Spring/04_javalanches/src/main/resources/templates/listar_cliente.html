@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: main-layout(~{::title},
+ ~{::main})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javalanches - Clientes Cadastrados</title>
+</head>
+
+<body>
+    <main>
+        <h1>Clientes Cadastrados</h1>
+        <hr>
+        <div th:each="cliente: ${clientes}"></div>
+    </main>
+</body>
+
+</html>

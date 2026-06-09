@@ -60,5 +60,11 @@ public class JavalanchesController {
         return "novo_cliente";
     }
 
+   @GetMapping("/listarClientes")
+    public String listarClientes(Model model) {
+        model.addAttribute("categorias", categoriaRepository.findAll());
+        return "listar_clientes";
+    }
+
 
 }
