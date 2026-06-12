@@ -71,10 +71,10 @@ public class JavalanchesController {
         return "listar_produtos";
     }
 
-    // TODO: implementar o método listarClientes para exibir a lista de clientes cadastrados
+    
     @GetMapping("/listarClientes")
     public String listarClientes(Model model, @RequestParam(defaultValue = "0") int pagina) {
-        Pageable pageable = PageRequest.of(pagina, 50, Sort.by("codigoCliente").ascending());
+        Pageable pageable = PageRequest.of(pagina,50, Sort.by("codigoCliente").ascending());
         Page<Cliente> clientes = clienteRepository.findAll(pageable);
 
         model.addAttribute("clientes", clientes);
@@ -110,4 +110,22 @@ public class JavalanchesController {
         categoriaRepository.save(categoria);
         return "atualizar_categoria_sucesso";
     }
+
+    @GetMapping("/atualizarProduto")
+    public String atualizarProduto(@RequestParam("codigoProduto") Long codigoProduto, Model model) {
+        Produto produto = produtoRepository.findById(codigoProduto).orElse(null);
+        model.addAttribute("produto", produto);
+        model.addAttribute("categorias", categoriaRepository.findAll());
+        return "atualizar_produto";
+    }
+
+    @PostMapping("/atualizarProduto")
+    public String atualizarProduto(Produto produto, @RequestParam("categoriaId") Long categoriaId) {
+        Categoria categoria = categoriaRepository.findById(categoriaId).orElse(null);
+        produto.setCategoria(categoria);
+        produtoRepository.save(produto);
+        return "atualizar_produto_sucesso";
+    }
+
+
 }
