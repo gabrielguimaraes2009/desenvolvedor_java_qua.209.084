@@ -169,4 +169,20 @@ public class JavalanchesController {
         categoriaRepository.save(categoria);
         return "atualizar_categoria_sucesso";
     }
+
+    @GetMapping("/deletarProduto")
+    public String deletarProduto(@RequestParam("codigoProduto") Long codigoProduto) {
+        produtoRepository.deleteById(codigoProduto);
+        return "redirect:/listarProdutos";
+    }
+
+    @GetMapping("deletarCategoria")
+    public String deletarCategoria(@RequestParam("codigoCategoria") Long codigoCategoria) {
+        Categoria categoria = categoriaRepository.findById(codigoCategoria).orELse(null);
+        if (categoria != null) {
+            produtoRepository.deleteAll(categoria.getProdutos());
+            categoriaRepository.deleteById(codigoCategoria);
+        }
+        return "redirect:/listarProdutos";
+    }
 }
