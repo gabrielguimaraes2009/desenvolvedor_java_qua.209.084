@@ -74,7 +74,7 @@ public class JavalanchesController {
 
         model.addAttribute("clientes", clientes);
         model.addAttribute("paginaAtual", pagina);
-        return "listar_clientes";
+        return "listar_cliente";
     }
 
     @GetMapping("/novoCliente")
@@ -178,7 +178,7 @@ public class JavalanchesController {
 
     @GetMapping("deletarCategoria")
     public String deletarCategoria(@RequestParam("codigoCategoria") Long codigoCategoria) {
-        Categoria categoria = categoriaRepository.findById(codigoCategoria).orELse(null);
+        Categoria categoria = categoriaRepository.findById(codigoCategoria).orElse(null);
         if (categoria != null) {
             produtoRepository.deleteAll(categoria.getProdutos());
             categoriaRepository.deleteById(codigoCategoria);
