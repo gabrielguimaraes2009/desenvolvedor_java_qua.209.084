@@ -77,7 +77,7 @@ public class JavalanchesController {
         return "listar_cliente";
     }
 
-    @GetMapping("/novoCliente")
+     @GetMapping("/novoCliente")
     public String novoCliente() {
         return "novo_cliente";
     }
